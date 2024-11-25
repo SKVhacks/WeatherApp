@@ -1,0 +1,132 @@
+
+@media only screen and (max-width: 800px) {
+    .all-description{
+        height: auto;
+        width: 465px;
+        max-width: 600px;
+        
+        position: relative;
+        
+        /* bottom:10px; */
+        background-color: rgb(255, 0, 0);
+        display: flex;
+        align-items: center;
+        place-content: center;
+        flex-wrap: wrap;
+        margin-top: 850px;
+        
+    }
+    video{
+        height: auto;
+        width: auto;
+    }
+    .box:nth-child(3){
+        /* background-color: blue; */
+        width: 75%;
+    }
+    .all-description >div{
+        /* margin: 10px; */
+        height: 200px; /*200 210*/
+        width: 210px;
+    }
+    
+  } 
+
+
+
+
+
+
+
+
+
+
+  var gauge;
+
+    window.onload = function() {
+        const a =humidity;
+        var target = document.getElementById('gauge-container');
+        gauge = Gauge(target, {
+            max: 100,
+            dialStartAngle: 135,
+            dialEndAngle: 45,
+            value: a,
+           
+            label: function(value) {
+                return Math.round(value) + "%";
+            },
+            color: function(value) {
+                if (value < 20) {
+                    return "#5ee432";
+                } else if (value < 40) {
+                    return "#fffa50";
+                } else if (value < 60) {
+                    return "#f7aa38";
+                } else {
+                    return "#ef4655";
+                }
+            }
+        });
+    };
+
+
+
+
+    to change bg img
+
+    // function changeBackgroundImage(weatherDescription) {
+//     const body = document.body;
+//     let imageUrl;
+
+//     if (weatherDescription.includes('overcast clouds')) {
+//         imageUrl = 'url(asset/cloudy.png)';
+//     } else if (weatherDescription.includes('cloud')) {
+//         imageUrl = 'url(path_to_cloudy_image.jpg)';
+//     } else if (weatherDescription.includes('sunny') || weatherDescription.includes('clear')) {
+//         imageUrl = 'url(asset/sunny.jpg)';
+//     } else {
+//         imageUrl = 'url(path_to_default_image.jpg)';
+//     }
+
+//     body.style.backgroundImage = imageUrl;
+// }
+/*
+function tomorrowWeather(apiKey,city){
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+    // const url = `${baseUrl}?q=${city}&appid=${apiKey}&units=metric`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.cod === 200) {
+            const  main1=data.list[1];
+            const todes=main1.weather[0].description;
+            console.log(todes);
+        } else {
+            alert('City not found');
+            document.getElementById("place").innerHTML = ` `;
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching the weather data:', error);
+    });
+}*/
+
+
+ .responsive{
+
+        margin: 0 25%;
+        display: flex;
+    justify-content: center; /* Center horizontally */
+    height: 100vh; /* Full viewport height to visualize centering */
+    align-items: center; /* Optional, if you also want to center vertically */
+        /* display: inline-block ; */
+        /* margin: 25px;*/
+        /* height: 90vh;
+        width: 465px; */
+       /*
+        top: 100vh;
+        position: relative;*/
+        background-color: antiquewhite; 
+
+    }
